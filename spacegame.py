@@ -12,6 +12,10 @@ turtle.fd(0)
 turtle.speed(0)
 # Change the background color
 turtle.bgcolor("black")
+# Change the window title
+turtle.title("Space War")
+# Change background image
+turtle.bgpic("stars.gif")
 # Hide the default turtle
 turtle.ht()
 # This saves memory
@@ -63,6 +67,7 @@ class Sprite(turtle.Turtle):
 class Player(Sprite):
 	def __init__(self, spriteshape, color, startx, starty):
 		Sprite.__init__(self, spriteshape, color, startx, starty)
+		self.shapesize(stretch_wid=0.6, stretch_len=1.1, outline=None)
 		self.speed = 4
 		self.lives = 3
 
@@ -116,7 +121,7 @@ class Ally(Sprite):
 class Missile(Sprite):
 	def __init__(self, spriteshape, color, startx, starty):
 		Sprite.__init__(self, spriteshape, color, startx, starty)
-		self.shapesize(stretch_wid=0.3, stretch_len=0.4, outline=None)
+		self.shapesize(stretch_wid=0.2, stretch_len=0.4, outline=None)
 		self.speed = 20
 		self.status = "ready"
 		self.goto(-1000, 1000)
